@@ -6,7 +6,8 @@ services:
     stdin_open: true 
     container_name: dart-server
     command: /bin/bash
+    working_dir: /root
     volumes:
-      - ./projetos:/home
+      - ./projetos:/root
 
     
