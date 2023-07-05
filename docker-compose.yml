@@ -1,0 +1,12 @@
+version: '3'
+services:
+  dart-server:
+    image: dart
+    tty: true 
+    stdin_open: true 
+    container_name: dart-server
+    command: /bin/bash
+    volumes:
+      - ./projetos:/home
+
+    
