@@ -2,21 +2,31 @@ import 'package:dados_console/dados_console.dart' as dados_console;
 import 'dart:io';
 
 void main(List<String> arguments) {
-  print('Informe  a primeira nota: ');
-  var entradaNota1 = stdin.readLineSync();
-  print('Informe  a segunda nota: ');
-  var entradaNota2 = stdin.readLineSync();
-  print('Informe  a terceira nota: ');
-  var entradaNota3 = stdin.readLineSync();
-  print('Informe  a quarta nota: ');
-  var entradaNota4 = stdin.readLineSync();
+  //estrutura de repetição usando while
+  var contador = 0;
+  var total = 10;
+  while (contador < total) {
+    contador++;
+    print('Contador: $contador');
+  }
 
-  var nota1 = double.parse(entradaNota1 ?? "0" );
-  var nota2 = double.parse(entradaNota2 ?? "0" );
-  var nota3 = double.parse(entradaNota3 ?? "0" );
-  var nota4 = double.parse(entradaNota4 ?? "0" );
+  print("Digite um numero ou 'S' para sair");
+  var entrada = stdin.readLineSync();
+  double acumulador = 0;
+  while (entrada != 'S') {
+    var numero = double.parse(entrada!);
+    acumulador += numero;
+    print("Digite um numero ou 'S' para sair");
+    entrada = stdin.readLineSync();
+  }
+  print('A soma dos valores é: $acumulador');
 
-  var media = (nota1 + nota2 + nota3 + nota4) / 4;
+  //estrutura de repetição usando do while
+  var contador2 = 0;
+  var total2 = 10;
+  do {
+    contador2++;
+    print('Contador: $contador2');
+  } while (contador2 < total2);
 
-  print('A média é: $media');
 }
