@@ -2,21 +2,55 @@ import 'package:dados_console/dados_console.dart' as dados_console;
 import 'dart:io';
 
 void main(List<String> arguments) {
-  print('Informe  a primeira nota: ');
-  var entradaNota1 = stdin.readLineSync();
-  print('Informe  a segunda nota: ');
-  var entradaNota2 = stdin.readLineSync();
-  print('Informe  a terceira nota: ');
-  var entradaNota3 = stdin.readLineSync();
-  print('Informe  a quarta nota: ');
-  var entradaNota4 = stdin.readLineSync();
+  var texto  = "MEu primeiro bloco for";
+  for (var i = 0; i < texto.length; i++) {
+    print(texto[i]);
+  }
 
-  var nota1 = double.parse(entradaNota1 ?? "0" );
-  var nota2 = double.parse(entradaNota2 ?? "0" );
-  var nota3 = double.parse(entradaNota3 ?? "0" );
-  var nota4 = double.parse(entradaNota4 ?? "0" );
+  var listanomes = ["João", "Maria", "José", "Pedro"];
+  for(var i = 0; i < listanomes.length; i++) {
+    print(listanomes[i]);
+  }
+  for (var nome in listanomes) {
+    print(nome);
+  }
 
-  var media = (nota1 + nota2 + nota3 + nota4) / 4;
+  //lista dos primeiro 100 numeros
+  for (var i = 0; i <= 100; i++) {
+    print(i);
+  }
 
-  print('A média é: $media');
+  //somatoria de todos os numeros
+  var soma = 0;
+  for (var i = 0; i <= 100; i++) {
+    soma += i;
+  }
+
+  //somatoria de todos numeroa ate 100 exibindo os valores em cada iteração
+  soma = 0;
+  for (var i = 0; i <= 100; i++) {
+    soma += i;
+    print("$i - $soma");
+  }
+
+  //somatoria de todos os numeros ate o numero informado
+  print("Informe um numero: ");
+  var entrada = stdin.readLineSync();
+  var numero = int.parse(entrada!);
+  soma = 0;
+  for (var i = 0; i <= numero; i++) {
+    soma += i;
+    print("$i - $soma");
+  }
+
+  //exibindo todos os valores de um array de numeros aleatorios
+  var valoresAleatorios = [4,7,5,8,3,9,1,2,6,10];
+  for(var valor in valoresAleatorios) {
+    print(valor);
+  }
+
+  //exibindo todos os valores de um array de numeros aleatorios pela função forEach
+  valoresAleatorios.forEach((valor) {
+    print(valor * 2);
+  });
 }
